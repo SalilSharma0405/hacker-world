@@ -11,24 +11,9 @@ import './CardView.scss';
 
 const AGE_LIMIT = 18;
 
-const CardView = ({ data, setItems }) => {
+const CardView = ({ data, setItems, currentAccordian, setCurrentAccordian }) => {
 
     const [state, setState] = useState(data);
-
-    const [isEdit, setIsEdit] = useState(false);
-
-    const [isDialogBoxOpen, setIsDialogBoxOpen] = useState(false);
-
-    const [isOpen, setIsOpen] = useState(false);
-
-
-    useEffect(() => {
-        if (isDialogBoxOpen) {
-            document.body.style.overflow = 'hidden';
-        } else document.body.style.overflow = 'scroll';
-    }, [isDialogBoxOpen]);
-
-
 
     const { id,
         first,
@@ -40,12 +25,31 @@ const CardView = ({ data, setItems }) => {
         country,
         description } = state
 
+
+    const [isEdit, setIsEdit] = useState(false);
+
+    const [isDialogBoxOpen, setIsDialogBoxOpen] = useState(false);
+
+    const isOpen = currentAccordian == id
+
+
+    useEffect(() => {
+        if (isDialogBoxOpen) {
+            document.body.style.overflow = 'hidden';
+        } else document.body.style.overflow = 'scroll';
+    }, [isDialogBoxOpen]);
+
+
+
+
+
     const dateDiff = new Date().getFullYear() - new Date(dob).getFullYear();
 
 
     const toggleOpen = () => {
-        setIsOpen(!isOpen)
+
         setIsEdit(false)
+        setCurrentAccordian(isOpen ? null : id)
     }
 
     const onSave = () => {
@@ -93,7 +97,6 @@ const CardView = ({ data, setItems }) => {
         onSave();
     }
 
-    console.log('description:::', description)
     return <>
         {isDialogBoxOpen && <DialogBox onClick={onDelete} onClose={toggleDialogBox} />}
 
@@ -110,7 +113,7 @@ const CardView = ({ data, setItems }) => {
                 </div>
 
 
-                {isOpen && <>
+                {isOpen && currentAccordian == id && <>
 
                     <div className='itemInfo'>
                         <div><div className='header'>Age</div>

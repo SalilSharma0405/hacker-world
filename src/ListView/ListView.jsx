@@ -6,6 +6,7 @@ import './ListView.scss';
 
 const ListView = ({ userName }) => {
     const [items, setItems] = useState(JSONData);
+    const [currentAccordian, setCurrentAccordian] = useState('');
 
 
     const filterRenderItems = items.filter((item) => item.first.toLocaleUpperCase().includes(userName.toLocaleUpperCase()) || item.last.toLocaleUpperCase().includes(userName.toLocaleUpperCase()) || !userName)
@@ -14,7 +15,7 @@ const ListView = ({ userName }) => {
     return (
         <div className='listContainer'>
             <div> {filterRenderItems.length ? filterRenderItems.map((data, index) => {
-                return <CardView key={data.id} data={{ ...data, index }} setItems={setItems} />
+                return <CardView currentAccordian={currentAccordian} key={data.id} data={{ ...data, index }} setItems={setItems} setCurrentAccordian={setCurrentAccordian}/>
             }) : <div>No details found</div>}</div>
         </div>
     )
