@@ -37,6 +37,6 @@ Your mission if you choose to accept it, you have to:
      -- if yes - the user will be deleted ✅ 
      -- if no - do nothing ✅ 
 
-6. Typescript is a plus - 
+6. Typescript is a plus ❌
 
 This message will self destruct in 5... 4... 3... 2... 1... NOT
