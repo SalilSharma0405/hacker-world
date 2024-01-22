@@ -1,0 +1,25 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.formFieldContainer{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  outline: none;
+  width: 400px;
+  text-align: left;
+}
+
+.inputField{
+   border: unset;
+   outline: none;
+   width: 94%;
+   margin: 0px 0px 0px 4px;
+}
+
+
+.viewContainer{
+  //  width: 500px;
+}

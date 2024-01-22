@@ -1,0 +1,109 @@
+.itemContainer {
+
+    width: 400px;
+    border: 1px solid #cac2c2;
+    border-radius: 8px;
+    margin-bottom: 12px;
+
+}
+
+
+
+.inputFieldForm {
+
+    outline: none;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 4px;
+
+    &:read-only {
+        border: none;
+    }
+}
+
+.descriptionField {
+
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: none;
+    &:read-only {
+        border: none
+       
+    }
+
+
+}
+
+.countryField {
+
+    outline: none;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 100px;
+
+
+    &:read-only {
+        border: none;
+    }
+
+}
+
+.itemHeader {
+
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+
+}
+
+.imgContainer {
+    border: 1px solid #cac2c2;
+    border-radius: 50px;
+    object-fit: contain;
+    margin: 0px 12px 0px 0px;
+}
+
+.itemName {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.itemInfo {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.header {
+    color: #9e8f8f;
+
+}
+
+.description {
+    padding: 12px;
+    text-align: left;
+}
+
+.svgContainer {
+
+    padding: 12px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+}
+
+.submitBtn{
+    all: unset;
+}
+
+.downArrowSvg{
+    transform: rotate(180deg);
+}
