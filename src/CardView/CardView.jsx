@@ -20,7 +20,7 @@ const CardView = ({ data, setItems, currentAccordian, setCurrentAccordian }) => 
         last,
         dob,
         gender,
-        email,
+      //  email,
         picture,
         country,
         description } = state
@@ -30,7 +30,7 @@ const CardView = ({ data, setItems, currentAccordian, setCurrentAccordian }) => 
 
     const [isDialogBoxOpen, setIsDialogBoxOpen] = useState(false);
 
-    const isOpen = currentAccordian == id
+    const isOpen = currentAccordian === id
 
 
     useEffect(() => {
@@ -103,7 +103,7 @@ const CardView = ({ data, setItems, currentAccordian, setCurrentAccordian }) => 
         <div className='itemContainer' key={id}>
             <form onSubmit={onSubmitHandler}>
                 <div className='itemHeader'>
-                    <img className='imgContainer' src={picture} />
+                    <img alt ={first}className='imgContainer' src={picture} />
                     <div className='itemName' >
                         <input required className="inputFieldForm" placeholder="first name" name="first" readOnly={!isEdit} type='text' size='5' value={first} onChange={onChangeHandler} />
 
@@ -113,7 +113,7 @@ const CardView = ({ data, setItems, currentAccordian, setCurrentAccordian }) => 
                 </div>
 
 
-                {isOpen && currentAccordian == id && <>
+                {isOpen && <>
 
                     <div className='itemInfo'>
                         <div><div className='header'>Age</div>
